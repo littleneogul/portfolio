@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Intro</title>
+
+    <style media="screen">
+      .sw
+      {
+        color:blue;
+      }
+
+      #smc
+      {
+        font-weight:bold;
+        color:green;
+      }
+    </style>
+
+    <script>
+      var day = {
+        "monday" : "happy",
+        "tuesday" : "sad",
+        "wendesday" : "exciting"
+      };
+
+      var month = [ "monday", "tuesday", "wendesday", "Thusday", "friday", "saturday", "sunday" ]
+
+      for (var key in day)
+      {
+        document.write(key + " : " + day[key] + "<br>");
+      }
+
+      document.write("<h3>" + "오늘은 " + month[2] + "요일 입니다." + "</h3>");
+
+      function SetBackGroundColor(color)
+      {
+        document.querySelector('body').style.backgroundColor = color;
+      }
+
+      function SetColor(color)
+      {
+        document.querySelecor('body').style.color = color;
+      }
+
+      function ChangeBackGround(self)
+      {
+        var simple = document.querySelector('body');
+
+        if (this.value === 'on')
+        {
+          simple.style.backgroundColor = 'yellow';
+          simple.style.color = 'black';
+          this.value = 'off';
+        }
+        else
+        {
+          simple.style.backgroundColor = 'black';
+          simple.style.color = 'yellow';
+          this.value = 'on';
+        }
+      }
+
+      function value_check(self)
+      {
+        var check_count = document.getElementsByName(this).length;
+
+        for (var i = 0; i < check_count; i++)
+        {
+          if (document.getElementsByName(this)[i].checked == true)
+          {
+            alert(document.getElementsByName(this)[i].value);
+          }
+        }
+      }
+    </script>
+
+  </head>
+  <body>
+      <h1><a href="Intro.html">황현우의 프로필</a></h1>
+      <h3 style = "background-color:black; color:white">2학년 8반 26번</h3>
+      <h4><span class = "sw">소프트웨어1등</span>, <span id = "smc">세명컴퓨터고등학교</span>.</h4>
+
+      <input id = "pink_white" type = "button" value = "pink" onclick = "SetBackGroundColor('pink'); SetColor('white');">
+
+      <input id = "Reset" type = "button" value = "Reset" onclick = "SetBackGroundColor('white'); SetColor('black');">
+
+      <input id = "question" type = "button" value = "email" onclick = "alert('hhw9560@naver.com');">
+
+      <input id = "change" type = "button" value = "on" onclick = "ChangeBackGround(this);">
+
+      <p></p>
+
+      <input type = "checkbox" name = "language" value = "javascript" onclick = "value_check(this);" />java
+
+      <input type = "checkbox" name = "language" value = "c" onclick = "value_check(this);" />c
+
+      <input type = "checkbox" name = "language" value = "python" onclick = "value_check(this);" />python
+
+
+
+      <ol>
+        <li><a href="1.html">goto 1.html</a></li>
+        <li><a href="2.html">goto 2.html</a></li>
+        <li><a href="3.html">goto 3.html</a></li>
+      </ol>
+  </body>
+</html>
